@@ -1,5 +1,5 @@
 FROM       node:8
-MAINTAINER pandora@crazyguys.me
+MAINTAINER hello@crazyguys.me
 
 ENV        NODE_ENV="development"
 
