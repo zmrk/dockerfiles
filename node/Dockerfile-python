@@ -1,0 +1,15 @@
+FROM       node
+MAINTAINER hello@crazyguys.me
+
+ENV        NODE_ENV="development"
+
+RUN        ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime && \
+           apt-get -yqq update && \
+           apt-get install -yqq python3-pip && \
+           pip3 install python-language-server
+
+WORKDIR    /root
+ADD        server.tar ./
+
+EXPOSE     3000
+CMD        ["node", "server"]
