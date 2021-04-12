@@ -1,11 +1,10 @@
-FROM       node
-MAINTAINER hello@crazyguys.me
+FROM       crazyguys/node-python
 
+ENV        PYTHONPATH="${PYTHONPATH}:/root/python/lib"
 ENV        NODE_ENV="development"
 
 RUN        ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime && \
-           apt-get -yqq update && \
-           apt-get install -yqq python3-pip && \
+           mkdir -p /root/python/lib && \
            pip3 install python-language-server
 
 WORKDIR    /root
