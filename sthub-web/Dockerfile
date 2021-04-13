@@ -4,4 +4,4 @@ WORKDIR /root
 ADD server.tar ./
 
 EXPOSE 3000
-CMD ["node", "server"]
+CMD ["yarn", "start"]
